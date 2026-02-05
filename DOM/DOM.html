@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Learning</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    font-family:sans-serif;
+}
+body{
+    background:
+    linear-gradient(rgba(255,154,158,0.6), rgba(161,140,209,0.6)),
+    url("imgg.jpg");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+
+button{
+    border-radius:20px;
+    font-size:18px;
+    border:none;
+    outline:none;
+    cursor:pointer;
+    background:linear-gradient(45deg,mistyrose,lavender);
+}
+
+.modal{
+    position:fixed;
+    top:-500px;
+    left:50%;
+    width:350px;
+    height:380px;
+    transform:translate(-50%,-50%);
+    background:#fff;
+    border-radius:8px;
+    box-shadow:0 0 10px 2px #ccc;
+    transition:0.5s;
+}
+
+.showModal{
+    top:50%;
+}
+
+.modal h2{
+    text-align:center;
+    padding:10px 0;
+    border-bottom:1px solid black;
+    font-size:20px;
+    font-weight:normal;
+    position:relative;
+}
+
+.modal h2 span{
+    position:absolute;
+    right:10px;
+    top:0;
+    cursor:pointer;
+    font-size:30px;
+}
+
+.modal form{
+    padding:20px;
+}
+
+.modal input,
+.modal textarea{
+    width:100%;
+    padding:10px;
+    margin:10px 0;
+    border:1px solid #ccc;
+    outline:none;
+}
+
+.modal button{
+    width:100%;
+    padding:10px;
+    background:black;
+    color:white;
+    border:none;
+    cursor:pointer;
+}
+
+.open-btn{
+    display:block;
+    margin:20px auto;
+    padding:10px 20px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="modal">
+    <h2>Enquiry Now !! <span>&times;</span></h2>
+    <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <input type="text" placeholder="Phone Number" required>
+        <textarea rows="3" placeholder="Your Message"></textarea>
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+<button class="open-btn">Open Modal</button>
+
+<script>
+let modal = document.querySelector(".modal");
+let btn = document.querySelector(".open-btn");
+let closeIcon = document.querySelector(".modal h2 span");
+
+btn.addEventListener("click", () => {
+    modal.classList.add("showModal");
+});
+
+closeIcon.addEventListener("click", () => {
+    modal.classList.remove("showModal");
+});
+</script>
+
+</body>
+</html>
